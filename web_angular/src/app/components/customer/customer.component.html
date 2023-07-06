@@ -1,0 +1,97 @@
+<div class="container mt-4">
+  <div class="card">
+    <button class="btn btn-primary btn-sm float-right" (click)="showFormModal()">ADD</button>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'d-block': isFormModalVisible || isEditMode}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ isEditMode ? 'Edit Customer' : 'Add Customer' }}</h5>
+        <button type="button" class="close" aria-label="Close" (click)="hideFormModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="save()">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" [(ngModel)]="firstName" name="firstName" class="form-control"
+              placeholder="Enter First Name">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" [(ngModel)]="lastName" name="lastName" class="form-control"
+              placeholder="Enter Last Name">
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" [(ngModel)]="dob" name="dob" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select [(ngModel)]="gender" name="gender" class="form-control">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" [(ngModel)]="address" name="address" class="form-control" placeholder="Enter Address">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="container mt-4" style="margin: 0 auto">
+  <h1>Customer Table</h1>
+
+    <div class="table-responsive">
+      <table class="table text-center" style="padding: 0">
+        <tbody>
+          <ng-container *ngFor="let customer of customerArray; let i = index">
+            <tr *ngIf="i % 5 === 0">
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row">First Name</th>
+              <td>{{ customer.firstName | uppercase }}</td>
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row">Last Name</th>
+              <td>{{ customer.lastName }}</td>
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row">Date of Birth</th>
+              <td>{{ customer.dob }}</td>
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row">Gender</th>
+              <td>{{ customer.gender }}</td>
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row">Address</th>
+              <td>{{ customer.address }}</td>
+            </tr>
+            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+              <th scope="row"></th>
+              <td class="d-flex justify-content-center" >
+                <button type="button" class="btn btn-success mr-2" (click)="setUpdate(customer)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="setDelete(customer)">Delete</button>
+              </td>
+
+            </tr>
+            <br> <br>
+
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
