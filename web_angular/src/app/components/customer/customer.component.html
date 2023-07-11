@@ -51,47 +51,48 @@
 
 
 
-  <div class="container mt-4" style="margin: 0 auto">
-  <h1>Customer Table</h1>
-
-    <div class="table-responsive">
-      <table class="table text-center" style="padding: 0">
-        <tbody>
-          <ng-container *ngFor="let customer of customerArray; let i = index">
-            <tr *ngIf="i % 5 === 0">
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row">First Name</th>
-              <td>{{ customer.firstName | uppercase }}</td>
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row">Last Name</th>
-              <td>{{ customer.lastName }}</td>
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row">Date of Birth</th>
-              <td>{{ customer.dob }}</td>
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row">Gender</th>
-              <td>{{ customer.gender }}</td>
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row">Address</th>
-              <td>{{ customer.address }}</td>
-            </tr>
-            <tr [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
-              <th scope="row"></th>
-              <td class="d-flex justify-content-center" >
-                <button type="button" class="btn btn-success mr-2" (click)="setUpdate(customer)">Edit</button>
-                <button type="button" class="btn btn-danger" (click)="setDelete(customer)">Delete</button>
-              </td>
-
-            </tr>
-            <br> <br>
-
-          </ng-container>
-        </tbody>
-      </table>
+<div class="container mt-4" style="margin: 0 auto">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 style="margin-right: 20px;">Customer Table</h1>
+    <div class="form-group" style="width: 300px;">
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText">
+      <span class="fa fa-search form-control-feedback"></span>
     </div>
+    
   </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table text-center" style="padding: 0">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 8%">First Name</th>
+        <th scope="col" style="width: 10%">Last Name</th>
+        <th scope="col" style="width: 10%">Date of Birth</th>
+        <th scope="col" style="width: 10%">Gender</th>
+        <th scope="col" style="width: 25%">Address</th>
+        <th scope="col" style="width: 10%">Actions</th>
+      </tr>
+
+      <tr *ngFor="let customer of getFilteredCustomers(); let i = index" [ngClass]="{'spacer-row': (i + 1) % 2 === 0}">
+        <td style="font-weight: 550">{{ customer.firstName | uppercase }}</td>
+        <td style="font-weight: 550">{{ customer.lastName }}</td>
+        <td style="font-weight: 550">{{ customer.dob }}</td>
+        <td style="font-weight: 550">{{ customer.gender }}</td>
+        <td style="font-weight: 550">{{ customer.address }}</td>
+        <td class="d-flex justify-content-center align-items-center">
+          <button type="button" class="btn btn-success mr-2" (click)="setUpdate(customer)">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="setDelete(customer)">Delete</button>
+        </td>
+      </tr>
+
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+

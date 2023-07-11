@@ -16,6 +16,8 @@ interface Customer {
 })
 export class CustomerComponent {
   customerArray: Customer[] = [];
+  searchText: string = '';
+  
   currentCustomerID = '';
   firstName = '';
   lastName = '';
@@ -128,5 +130,11 @@ export class CustomerComponent {
     this.dob = '';
     this.gender = '';
     this.isEditMode = false;
+  }
+  getFilteredCustomers(): any[] {
+    return this.customerArray.filter(customer => {
+      const fullName = `${customer.firstName} ${customer.lastName}`.toLowerCase();
+      return fullName.includes(this.searchText.toLowerCase());
+    });
   }
 }
