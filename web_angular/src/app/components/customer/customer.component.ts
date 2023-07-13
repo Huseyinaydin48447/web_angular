@@ -7,6 +7,7 @@ interface Customer {
   dob: string;
   gender: string;
   address: string;
+
 }
 
 @Component({
@@ -17,14 +18,15 @@ interface Customer {
 export class CustomerComponent {
   customerArray: Customer[] = [];
   searchText: string = '';
-  
+  isDropdownOpen: boolean = false;
+
   currentCustomerID = '';
   firstName = '';
   lastName = '';
   dob = '';
   gender = '';
   address = '';
-  customer: any; 
+  customer: any;
 
   isFormModalVisible = false;
   isEditMode = false;
@@ -39,6 +41,13 @@ export class CustomerComponent {
         console.log(resultData);
         this.customerArray = resultData.data;
       });
+  }
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  dropdownClicked(event: Event) {
+    event.stopPropagation();
   }
 
   setUpdate(data: any) {
@@ -131,10 +140,26 @@ export class CustomerComponent {
     this.gender = '';
     this.isEditMode = false;
   }
+
+  filterCustomers(value: string) {
+    this.searchText = value;
+  }
+
   getFilteredCustomers(): any[] {
     return this.customerArray.filter(customer => {
       const fullName = `${customer.firstName} ${customer.lastName}`.toLowerCase();
       return fullName.includes(this.searchText.toLowerCase());
     });
+
+
   }
+  sortCustomers(sortType: string) {
+    if (sortType === 'newest') {
+      this.customerArray.sort((a, b) => new Date(b.dob).getTime() - new Date(a.dob).getTime());
+    } else if (sortType === 'oldest') {
+      this.customerArray.sort((a, b) => new Date(a.dob).getTime() - new Date(b.dob).getTime());
+    }
+  }
+
+
 }
