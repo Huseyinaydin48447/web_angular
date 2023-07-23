@@ -1,38 +1,41 @@
-const userService = require("./userService");
+const { getDataFromDBService, createUserDBService, updateUserDBService, removeUserDBService } = require("./userService");
 
 const getDataControllerfn = async (req, res) => {
-  const employee = await userService.getDataFromDBService();
-  res.send({ status: true, data: employee });
-};
-
-const createUserControllerFn = async (req, res) => {
-  const status = await userService.createUserDBService(req.body);
-  if (status) {
-    res.send({ status: true, message: "User created successfully" });
-  } else {
-    res.send({ status: false, message: "Error creating user" });
+  try {
+    const employee = await getDataFromDBService();
+    res.send({ status: true, data: employee });
+  } catch (error) {
+    res.status(500).send({ status: false, message: "Error getting data", error });
   }
 };
 
-const updateUserController = async (req, res) => {
-  console.log(req.params.id);
-  console.log(req.body);
+const createUserControllerFn = async (req, res) => {
+  console.log("im here")
+  try {
+    await createUserDBService(req.body);
+    res.send({ status: true, message: "User created successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ status: false, message: "Error creating user", error: error });
+  }
+};
 
-  var result = await userService.updateUserDBService(req.params.id, req.body);
-  if (result) {
+
+const updateUserController = async (req, res) => {
+  try {
+    await updateUserDBService(req.params.id, req.body);
     res.send({ status: true, message: "User Updated" });
-  } else {
-    res.send({ status: false, message: "User Update Failed" });
+  } catch (error) {
+    res.status(500).send({ status: false, message: "User Update Failed", error });
   }
 };
 
 const deleteUserController = async (req, res) => {
-  console.log(req.params.id);
-  var result = await userService.removeUserDBService(req.params.id);
-  if (result) {
+  try {
+    await removeUserDBService(req.params.id);
     res.send({ status: true, message: "User Deleted" });
-  } else {
-    res.send({ status: false, message: "User Deletion Failed" });
+  } catch (error) {
+    res.status(500).send({ status: false, message: "User Deletion Failed", error });
   }
 };
 

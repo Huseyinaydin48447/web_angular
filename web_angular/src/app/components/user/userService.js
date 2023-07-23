@@ -19,7 +19,6 @@ module.exports.createUserDBService = (userDetails) => {
 module.exports.createUserDBService = (userDetails) => {
   return new Promise(function myFn(resolve, reject) {
     var userModelData = new userModel();
-
     userModelData.firstName = userDetails.firstName;
     userModelData.lastName = userDetails.lastName;
     userModelData.dob = userDetails.dob;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface Customer {
+  dateAdded: string | number | Date;
   firstName: string;
   lastName: string;
   dob: string;
@@ -9,13 +10,13 @@ interface Customer {
   address: string;
 
 }
-
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent {
+  
   customerArray: Customer[] = [];
   searchText: string = '';
   isDropdownOpen: boolean = false;
@@ -34,6 +35,7 @@ export class CustomerComponent {
   constructor(private http: HttpClient) {
     this.getAllCustomer();
   }
+
 
   getAllCustomer() {
     this.http.get("http://localhost:8000/user/getAll")
@@ -89,23 +91,23 @@ export class CustomerComponent {
   }
 
   save() {
-    if (this.isEditMode) {
-      this.updateRecords();
-    } else {
+    // if (this.isEditMode) {
+    //   this.updateRecords();
+    // } else {
       this.register();
-    }
+   // }
   }
 
   register() {
     const bodyData = {
       firstName: this.firstName,
       lastName: this.lastName,
-      address: this.address,
       dob: this.dob,
-      gender: this.gender
+      gender: this.gender,
+      address: this.address,
     };
 
-    this.http.post("http://localhost:8000/user/create", bodyData)
+    this.http.post("http://localhost:8000/user/add", bodyData)
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert("Customer Registered Successfully");
@@ -118,6 +120,7 @@ export class CustomerComponent {
         this.hideFormModal();
       });
   }
+
 
   showFormModal() {
     this.isFormModalVisible = true;
@@ -162,4 +165,11 @@ export class CustomerComponent {
   }
 
 
+  refreshPage() {
+    window.location.reload();
+  }
+
+
+
+  
 }

@@ -8,20 +8,26 @@ const userSchema = new Schema({
   },
   lastName: {
     type: String,
-    required: true,
+    required: false,
   },
   dob: {
     type: String,
-    required: true,
+    required: false,
   },
   gender: {
     type: String,
-    required: true,
+    required: false,
   },
   address: {
     type: String,
-    required: true,
-  },
+    required: false,
+  }
+  //   addedDate:{
+  //   type: String,
+  //   required: true,
+
+  // }
+
 });
 
 module.exports = mongoose.model("customers", userSchema);
