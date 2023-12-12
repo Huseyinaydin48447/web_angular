@@ -1,0 +1,183 @@
+#bodyy{
+    height: 940px;
+    width: 700px;
+}
+
+
+#sender {
+    padding-left: 20px;
+  width: 350px;
+  margin-bottom: -110px; 
+
+}
+.senderLine {
+  border-top: 5px solid #000000 !important;
+  margin-top: 2;
+  width: 300px;
+  margin-left: 0px;
+}
+.senderDiv {
+  padding-top: 2px;
+  font-size: 13px;
+}
+
+#sayin {
+  padding-left: 20px;
+  width: 350px;
+
+}
+.sayinDiv {
+  font-size: 14px;
+  padding-top: 2px;
+}
+.sayinh2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+#ettn {
+  padding-left: 2px;
+  width: 350px;
+
+}
+.ettnDiv {
+  font-size: 14px;
+
+}
+
+.ettnTitle {
+  font-size: 18px;
+  padding-right: 2px;
+}
+.fotorafimg {
+  max-width: 100%;
+  height: auto;
+}
+#fotoraf {
+    width: 150px;
+    height: 20%;
+    padding-left: 595px;
+    padding-right: 395px;
+    margin-bottom: -50px; 
+
+  }
+  
+  .custom-table {
+    border-collapse: collapse;
+
+  }
+  
+  .custom-table th, .custom-table td {
+    border: 2px solid #615f5f;
+    text-align: left;
+    
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -95px;
+  }
+  
+  .table-container1 {
+    width: 620px;
+    padding-left: 680px;
+    margin-bottom: 75px;
+    margin-bottom: 120px; 
+  }
+  
+  .custom-table td  {
+    width: auto; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.custom-table th  {
+    width: auto; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+  .custom-table2 {
+    border-collapse: collapse;
+
+  }
+  .table-container2{
+    margin-bottom: 95px;
+    margin-bottom: 30px;
+  }
+  .custom-table2 th, .custom-table2 td {
+    border: 2px solid #615f5f;
+    text-align: left;
+    
+  }
+.table-container2 .custom-table2{
+    width: 1452px;
+}
+.table-container2{
+    padding-left:20px;
+
+}
+
+.custom-table2 thead {
+    height: 50px; 
+    text-align: center;
+
+  }
+  .custom-table2 th {
+    text-align: center;
+
+  }
+  .custom-table3 {
+    border-collapse: collapse;
+
+  }
+
+  .custom-table3 th, .custom-table3 td {
+    border: 2px solid #615f5f;
+    text-align: right;
+    
+  }
+
+  .custom-table3 td{
+    width:180px;
+  }
+  .table-container3 {
+    /* text-align: left; */
+    margin-left:1105px;
+    padding-bottom: 300px;/*burasaı*/
+
+  } 
+
+  .custom-table3 th  {
+    width: auto; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+  .sebeb-container {
+    margin-top: 20px; 
+    border: 2px solid #615f5f;
+    padding: 10px;
+    margin-top: -275px;
+    width: 1450px;
+  }
+  
+  .sebeb-content {
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .sebeb-content p {
+    margin-bottom: 5px;
+  }
+  .iban-container {
+    margin-top: 20px; 
+    font-size: 14px;
+  }
+  
+
+  .sebeb-container{
+    margin-bottom: 500px;
+  }

@@ -1,0 +1,68 @@
+{
+  "sender": {
+    "name": "Semih Çelik",
+    "address": "Cumhuriyet 123 sokak  ",
+    "sehir":"Keçiören / Ankara",
+    "E-Posta": "celikksemih@gmail.com",
+    "Vergi Dairesi": "Vergi Dairesi:ulucanlar",
+    "VKN": "VKN:1234567801",
+    "Ticaretsicilno":"TICARETSICILNO:",
+    "Mersisno":"MERSISNO:"
+  },
+  "sayin": {
+    "name": "Birfatura -",
+    "mahalle":"Kızılcaşar Mh ",
+    "sehir":"Gölbaşı / Ankara / Türkiye",
+    "Tel": "Tel:555555555",
+    "TCKN": "TCKN:12345678911"
+    
+  },"ettn":{
+    "ETTN": "fc572b9f-d104-4cef-9814-b910ab73b108"
+  }
+  
+  
+  
+  ,"fotoraf":{
+    "photo1":"indir.jpg",
+    "photo2":"as1.jpg"
+  },
+  "tablo1": {
+    "Özellestirme No:": "TR1.2",
+    "Senaryo:": "EARSIVFATURA",
+    "Fatura Tipi:": "TEVKIFAT",
+    "Fatura No:": "ARS202300000000001",
+    "Fatura Tarihi:": "07-02-2023",
+    "Fatura Saati:": "11:58:00",
+    "Gönderme Tarihi:": "07-02-2023 11:58:00",
+    "Muhasabe Fatura No:": "fc572b9f-d104-4cef-9814-b910ab73b108",
+    "Satis Kanali:": "DiğerGerçekMağaza"
+  },
+  "tablo2": {
+    "Sıra No": "1",
+    "Stok Kodu": "DO123",
+    "Mal Hizmet": "BirFatura Düğün Organizasyonu",
+    "Miktar":"1 Adet",
+    "Birim Fiyat": "6.779,6610TL",
+    "KDV Orani": "%18",
+    "KDV Tutari": "1.220,34TL",
+    "Mal Hizmet Tutarı": "6.779,66TL"
+  },
+  "tablo3": {
+    "Mal Hizmet Toplam Tutari": "6.779,66TL",
+    "Toplam iskonto": "0.00TL",
+    "Hesaplanan KDV(%18)": "1.220,34TL",
+    "KDV Dahil Toplam Tutar": "8.000,00TL",
+    "Hesaplanan KDV Tevkifat(%50)": "610,17",
+    "Tevkifata Tabi islem Tutarı                          ": "6.779,66TL",
+    "Tevkifata Tabi islem Üzerinden Hes KDV": "1.220,34TL",
+    "Ödenecek Tutar": "7.389,83TL"
+  },
+  "sebeb": {
+    "Tevkifat Sebebi": "605-ORGANIZASYON HIZMETI",
+    "Tevkifat Sebebi Tutari": "Yanlız YedinBinÜçYüzSeksenDokuzTürkLirasıSeksenKuruş",
+    "IBAN": "TR0006000200003000048998",
+    "Banka": "Cepbank",
+    "Doviz Turu": "TRY",
+    "Aciklama": "Genel Kasa  E-Arşiv kapsamından elektronik ortamda iletilmiştir. Bu fatura irsaliye yerine geçer,-Kargo Kampanya Kodu:113565553112297-Kargo şirketi:Aras-Teslimat Bilgileri:BİRFATURA kızılcaşar mh Gölbaşı Ankara 555555555"
+  }
+}
